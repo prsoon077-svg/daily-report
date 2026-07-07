@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #f6f5f1;
+  }
+  body {
+    @apply font-body text-ink antialiased;
+  }
+  ::selection {
+    background-color: #1e7a6e33;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-line rounded-sm;
+  }
+
+  .label-eyebrow {
+    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-ink/50;
+  }
+
+  .stat-number {
+    @apply font-display text-4xl tabular-nums;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
